@@ -5,6 +5,11 @@ fn main() {
     operations();
     if_else();
     matching();
+    match2();
+    //loop1();
+    while_loop();
+    for_loop();
+    strings();
 }
 
 
@@ -79,4 +84,71 @@ fn matching()
           println!("Please try again")
      }
     }
+}
+
+fn match2()
+{
+    const END_VALUE: bool = false; 
+
+    match END_VALUE 
+    {
+        true => {
+            println!("End value is true")
+        }
+
+        false => 
+        {
+            print!("End value is false")
+        }
+    }
+}
+
+
+// fn loop1()
+// {
+//     let mut count = 1; 
+
+//     loop 
+//     {
+//         println!("This loop will run until count > 8");
+//         println!("Current Count: {}",count);
+
+//         if count > 8 
+//         {
+//             println!("Current Count is greater that 8");
+//         }
+
+//         count += 1
+//     }
+// }
+
+
+fn while_loop(){
+
+    let mut age = 7; 
+
+    while age < 18 {
+        println!("Child is not yet an adult");
+        age += 1
+    }
+
+    println!("Child is now an adult");
+}
+
+
+fn for_loop()
+{
+    for i in 1..6
+    {
+        println!("{}",i)
+    }
+}
+
+fn strings()
+{
+    let mut name: &str = "name";
+    println!("{}",name);
+
+    name = "secondname";
+    println!("{}",name);
 }
