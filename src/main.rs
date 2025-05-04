@@ -1,3 +1,6 @@
+use std::collections::HashMap;
+
+
 
 
 fn main() {
@@ -10,6 +13,9 @@ fn main() {
     while_loop();
     for_loop();
     strings();
+    arrays();
+    vectors();
+    tuples();
 }
 
 
@@ -151,4 +157,55 @@ fn strings()
 
     name = "secondname";
     println!("{}",name);
+
+}
+
+
+fn arrays(){
+    let mut letters = ['a','b','c','d','e'];
+
+    println!("{} is the first character in the array ",letters[0]);
+    for letter in letters 
+    {
+        println!("{}",letter)
+    }
+
+    letters[0] = 'z';
+
+    println!("The first element in the array is now {}", letters[0]); 
+    println!("The length of the letters array is {}", letters.len() );
+}
+
+
+fn vectors(){
+    let mut numbers = vec![1,2,3,4,5];
+    println!("Initial vector {:?}",numbers);
+
+    numbers.push(6);
+    println!("Final vector {:?}",numbers);
+
+    println!("The values of my numbers vector are ");
+    for number in &numbers 
+    {
+        println!("{}",number); 
+    }
+
+}
+
+
+fn tuples()
+{
+    let my_tuple = ("1",1);
+
+    println!("{}", my_tuple.0);
+    println!("{}", my_tuple.1);
+
+    let ( one_str, one_int) = get_user();
+    println!("{} + {} = 2 ", one_str, one_int)
+}
+
+
+fn get_user() -> (String, i8)
+{
+    (String::from("1"), 1)
 }
